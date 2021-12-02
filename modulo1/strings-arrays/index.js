@@ -23,7 +23,7 @@ const emailUsuario = prompt("Qual é o seu e-mail?")
 console.log(`O e-mail ${emailUsuario.trim(emailUsuario)} foi cadastrado com sucesso. Seja bem-vindo(a), ${nomeUsuario.trim(nomeUsuario)}.`)
 
 //2A QUESTÃO
-comidasFavoritas = ["Moqueca", "Torta de morango", "Coxinha", "Macarronada", "Sushi"]
+let comidasFavoritas = ["Moqueca", "Torta de morango", "Coxinha", "Macarronada", "Sushi"]
 console.log(comidasFavoritas)
 console.log("Essas são as minhas comidas favoritas:")
 console.log(comidasFavoritas[0])
@@ -32,7 +32,17 @@ console.log(comidasFavoritas[2])
 console.log(comidasFavoritas[3])
 console.log(comidasFavoritas[4])
 const comidaFavoritaUsuario = prompt("Fale uma comida favorita:")
-comidasFavoritas.spice(1, 1)
-comidasFavoritas.push(comidaFavoritaUsuario)
-//AINDA FAZENDO//
+//Não consegui fazer a letra D//
+
+//3A QUESTÃO
+listaDeTarefas = []
+tarefa1Usuario = prompt("Informe uma tarefa que você precisa fazer hoje:")
+tarefa2Usuario = prompt("Informe mais uma tarefa que você precisa fazer hoje:")
+tarefa3Usuario = prompt("Informe outra tarefa que você precisa fazer hoje:")
+listaDeTarefas.push(tarefa1Usuario, tarefa2Usuario, tarefa3Usuario)
+console.log(listaDeTarefas)
+indice = Number(prompt("Digite o índice de uma tarefa que já realizou (0, 1 ou 2): "))
+listaDeTarefas.splice(indice, 1)
+console.log(listaDeTarefas)
+
 
