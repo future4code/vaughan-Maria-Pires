@@ -14,7 +14,7 @@ a) Declarando a variável "numero", que terá o valor dado pelo usuário.
 b) "Esse número passou no teste" e o aviso de erro, pq a variável "mensagem" não foi definida. No caso 
 de -10, aparece apenas o aviso de erro, já que o primeiro texto só é exibido se o número digitado
 for maior do que 0. 
-c) VOLTAR AQUI DPS.
+c) Sim, a mensagem deveria ter sido declarada fora da condicional.
 
 */
 
@@ -82,22 +82,5 @@ function irOuNao(genero, ingresso){
 irOuNao(generoFilme, valorIngresso)
 
 
-let fruta = prompt("Escolha uma fruta")
-let preco
-switch (fruta) {
-  case "Laranja":
-    preco = 3.5
-    break;
-  case "Maçã":
-    preco = 2.25
-    break;
-  case "Uva":
-    preco = 0.30
-    break;
-  case "Pêra":
-    preco = 5.5
-  default:
-    preco = 5
-    break;
-}
-console.log("O preço da fruta ", fruta, " é ", "R$ ", preco)
+
+
