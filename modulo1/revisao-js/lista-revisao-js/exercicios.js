@@ -12,35 +12,48 @@ function retornaTamanhoArray(array) {
 
 function retornaArrayInvertido(array) {
     return array.reverse()
-  
+
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    return array.prototype.sort()
+    let numerosOrdenados = array.sort();
+    return numerosOrdenados()
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    if(array[i] % 2 === 0){
-        return array
-    }
-    }
+    let apenasNumerosPares = array.filter(numero => numero % 2 === 0)
+    return apenasNumerosPares
+}
+
+    
   
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
+    let numerosParesAoQuadrado = array.filter(numero => numero % 2 === 0)
+    numerosParesAoQuadrado = numerosParesAoQuadrado.map(numero => numero ** 2)
+    return numerosParesAoQuadrado
+
  
 }
 
 // EXERCÍCIO 06
-function retornaMaiorNumero(array) {
-  
+function retornaMaiorNumero(array){
+    let maior = - Infinity;
+    for(let i = 0; i < array.length; i++){
+        if(array[i] > maior){
+            maior = numeros[i]
+            return maior
 }
+    }
+}
+retornaMaiorNumero()
+
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
 }
 
 // EXERCÍCIO 08
@@ -50,8 +63,15 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
+    if(ladoA === ladoB && ladoB === ladoC)
+    return `Equilátero`}
+    if(ladoA !== ladoB && ladoB !== ladoC){
+        return `Escaleno`
+    } else {
+        return `Isósceles`
+    }
 
-}
+classificaTriangulo()
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
