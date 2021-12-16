@@ -1,0 +1,37 @@
+h1{
+    color: palevioletred;
+}
+
+h1{
+    text-align: center;
+}
+
+
+div{
+    background-color: skyblue;
+}
+
+div{
+    text-align: center;
+}
+
+
+body{
+    background-color: skyblue;
+}
+
+
+
+p{
+    text-align: center;
+}
+
+
+.menu{
+    border: black 2px dashed;
+    display: block
+}
+
+.texto{
+    border: aliceblue 2px solid;
+}
