@@ -104,8 +104,6 @@ div img {
 
 
 
-
-
 /**
   *
   *  ESTILOS COMPRAR 
@@ -120,6 +118,7 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    width: 50px;
 }
 
 td button {
