@@ -44,10 +44,17 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    margin-bottom: 100px;
+    display: block;
+    margin: auto;
+  
+    
+    
 }
 
 .botao-amarelo:hover {
     background-color: #c44f00;
+    
 }
 
 .container {
@@ -73,17 +80,27 @@ div img {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    
 }
 
 #container-para-comprar {
     background-color: #e7eb90;
+    
+    
 }
 
 #container-para-comprar>p {
-    color: #c44f00;
+    color: #cf440c;
     padding: 100px 0;
     font-size: 60px;
+
 }
+
+
+
+
+
+
 
 
 /**
