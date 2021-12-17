@@ -17,8 +17,7 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    let numerosOrdenados = array.sort();
-    return numerosOrdenados()
+    return array.sort()
 }
 
 // EXERCÍCIO 04
@@ -41,56 +40,90 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array){
-    let maior = - Infinity;
-    for(let i = 0; i < array.length; i++){
-        if(array[i] > maior){
-            maior = numeros[i]
-            return maior
-}
-    }
-}
-retornaMaiorNumero()
-
-
+     let maiorNumero = -Infinity;
+     for (let i = 0; i < array.length; i++) {
+         if (array[i] > maiorNumero) {
+             maiorNumero = array[i];
+            }
+        }
+        return maiorNumero;
+      }
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+    let maiorNumero;
+    let menorNumero;
+    let diferenca;
+    let maiorDivisivelPorMenor;
+    if(num1 > num2){
+        maiorNumero = num1;
+        menorNumero = num2;
+    } else {
+         maiorNumero = num2;
+         menorNumero = num1;
+    } maiorDivisivelPorMenor = maiorNumero % menorNumero === 0;
+    diferenca = maiorNumero - menorNumero
+   return {
+       maiorNumero,
+       maiorDivisivelPorMenor,
+       diferenca
+   }
 }
+
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
+    
+    
    
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-    if(ladoA === ladoB && ladoB === ladoC)
-    return `Equilátero`}
-    if(ladoA !== ladoB && ladoB !== ladoC){
+    if(ladoA === ladoB && ladoB === ladoC){
+        return `Equilátero`;
+    } else if(ladoA !== ladoB & ladoB !== ladoC && ladoA !== ladoC){
         return `Escaleno`
     } else {
         return `Isósceles`
     }
+}
 
-classificaTriangulo()
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
+ 
+
   
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+    const objetoFilme = {
+        nome: 'O Diabo Veste Prada',
+        ano: 2006,
+        diretor: 'David Frankel',
+        atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
+    }
+    return `Venha assistir ao filme ${objetoFilme.nome}, de ${objetoFilme.ano}, dirigido por ${objetoFilme.diretor} e estrelado por ${objetoFilme.atores[0]}, ${objetoFilme.atores[1]}, ${objetoFilme.atores[2]}, ${objetoFilme.atores[3]}.`
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+    const pessoaAnonima = {
+        ...pessoa,
+        nome: 'ANÔNIMO'
+    }
+   return pessoaAnonima
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+    let arrayPessoasQueTemPermissao = []
+    let altura;
+    let idade;
+    if(altura >= 1.5 && 60 > idade > 14){
+        return arrayPessoasQueTemPermissao.push()
+    }
 }
 
 // EXERCÍCIO 13B
