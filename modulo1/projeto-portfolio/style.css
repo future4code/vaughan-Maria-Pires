@@ -1,0 +1,30 @@
+body{
+    background-color: #C0C0C0;
+
+}
+h1{
+    text-align: center;
+    color: #76323F;
+    font: 2em monospace;
+}
+
+p{
+    text-align: center;
+    color: #76323F;
+    font: 1.2em monospace;
+
+    
+}
+
+#foto-do-perfil{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 55%;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
