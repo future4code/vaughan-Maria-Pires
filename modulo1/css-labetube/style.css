@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #ff6e35;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    
+
+}
+
+.caixa-de-busca{
+    width: 60px;
+    height: 25px;
+}
+
+.videos-yt{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    
+    
+}
+
+.card-video{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border: 2px solid rgb(21, 129, 21);
+    
+   
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    margin: 20px;
+    padding-bottom: 300px;
+}
+
+footer{
+    background-color: rgb(36, 33, 33);
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.conteudo-pg-videos h2{
+    padding: 15px;
+    
+}
+
