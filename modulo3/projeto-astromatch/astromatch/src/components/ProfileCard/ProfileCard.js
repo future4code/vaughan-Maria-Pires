@@ -1,21 +1,17 @@
-import react from "react";
-import styled from "styled-components";
-import { AstromatchCard, Botoes } from "./style";
+import React from "react";
+import { ButtonsDiv, CartaoProfiles } from "./styled";
 
-
-
-export default function ProfileCard() {
-    return (
-        <div>
-            <AstromatchCard>
-            <h3>Nome, idade</h3>
-            <p>Bio</p>
-            <p>Foto no background</p>
-            <Botoes>
-                <button>Like</button>
-                <button>X</button>
-            </Botoes>
-            </AstromatchCard>
-        </div>
+const ProfileCard = (props) => {
+    return(
+        <CartaoProfiles>
+            <h3>{props.profList.name}, {props.profList.age}</h3>
+            <p>{props.profList.bio}</p>
+            <img height="250px"src={props.profList.photo}/>
+            <ButtonsDiv>
+                <button onClick={props.dislike}>X</button>
+                <button onClick={props.like}>Like</button>
+            </ButtonsDiv>
+        </CartaoProfiles>
     )
 }
+export default ProfileCard;
