@@ -9,7 +9,7 @@ const ProfileCard = (props) => {
             <img height="250px"src={props.profList.photo}/>
             <ButtonsDiv>
                 <button onClick={props.dislike}>X</button>
-                <button onClick={props.like}>Like</button>
+                <button onClick={props.like}>♥</button>
             </ButtonsDiv>
         </CartaoProfiles>
     )

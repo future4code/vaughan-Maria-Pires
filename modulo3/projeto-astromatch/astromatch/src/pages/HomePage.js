@@ -35,6 +35,7 @@ export default function HomePage(props) {
     const choosePerson = (id) => {
         axios.post(`${BASE_URL}choose-person`, bodyLike)
             .then((res) => {
+                getProfileToChoose()
                 console.log(`Você curtiu ${profilesList.name}`)
             })
             .catch((err) => {
@@ -45,12 +46,14 @@ export default function HomePage(props) {
     const notChoosePerson = (id) => {
         axios.post(`${BASE_URL}choose-person`, bodyDislike)
         .then((res) => {
+            getProfileToChoose()
             console.log(`Você não curtiu ${profilesList.name}`)
         })
         .catch((err) => {
             console.log(err)
         })
     }
+
 
     console.log("profiles", profilesList)
     return (

@@ -30,14 +30,10 @@ export default class App extends React.Component{
     this.setState({currentScreen: pageName})
   }
   
-
   render(){
     return(
       <div>
         {this.choosePage()}
-        <Div>
-      <button>Limpar swipes e matches</button>
-        </Div>
       </div>
     )
   }
