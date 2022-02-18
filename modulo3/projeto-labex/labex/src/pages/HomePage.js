@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 export const HomePage = () => {
     const navigate = useNavigate()
     const goToListTripPage = () => {
-      navigate("list")
+      navigate("trips/list")
     }
     const goToAdminHomePage = () => {
-        navigate("admin")
+        navigate("admin/trips/list")
     }
+
     return (
         <div>
             <h1>LabeX</h1>

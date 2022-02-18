@@ -14,11 +14,11 @@ export default function Router(){
     <Routes>
       <Route exact path={"/"} element={<HomePage/>}/>
       <Route exact path={"login"} element={<LoginPage/>}/>
-      <Route exact path={"list"} element={<ListTripPage/>}/>
-      <Route exact path={"application"} element={<ApplicationFormPage/>}/>
-      <Route exact path={"admin"} element={<AdminHomePage/>}/>
+      <Route exact path={"trips/list"} element={<ListTripPage/>}/>
+      <Route exact path={"trips/application"} element={<ApplicationFormPage/>}/>
+      <Route exact path={"admin/trips/list"} element={<AdminHomePage/>}/>
       <Route exact path={"admin/trips/create"} element={<CreateTripPage/>}/>
-      <Route path={"admin/trips/"} element={<TripDetailsPage/>}/>
+      <Route path={"admin/trips/:id"} element={<TripDetailsPage/>}/>
   
     </Routes>
     </BrowserRouter>

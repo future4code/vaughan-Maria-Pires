@@ -7,7 +7,7 @@ export const CreateTripPage = () => {
     const navigate = useNavigate()
     return(
         <div>
-            <h1>CreateTripPage</h1>
+            <h1>Create Trip Page</h1>
             <input/>
             <input/>
             <button onClick={() => navigate(-1)}>Voltar</button>
