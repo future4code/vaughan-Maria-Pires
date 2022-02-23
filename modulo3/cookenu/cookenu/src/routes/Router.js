@@ -12,11 +12,11 @@ const Router = () => {
         <BrowserRouter>
         <Header/>
             <Routes>
-                <Route path="login" element={<LoginPage />} />
-                <Route path="cadastro" element={<SignUpPage/>}/>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/cadastro" element={<SignUpPage/>}/>
                 <Route path="/" element={<RecipesListPage/>}/>
-                <Route path="detalhe/:id" element={<RecipeDetailsPage/>}/>
-                <Route path="adicionar-receita" element={<AddRecipesPage/>}/>
+                <Route path="/detalhe/:id" element={<RecipeDetailsPage/>}/>
+                <Route path="/adicionar-receita" element={<AddRecipesPage/>}/>
             </Routes>
 
 
