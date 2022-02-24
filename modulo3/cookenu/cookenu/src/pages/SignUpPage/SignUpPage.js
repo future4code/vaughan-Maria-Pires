@@ -5,12 +5,12 @@ import logo from "../../assets/logo.png";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 
-const SignUpPage = () => {
+const SignUpPage = ({rightButtonText, setRightButtonText}) => {
     useUnprotectedPage()
     return(
         <ScreenContainer>
             <LogoImage src={logo}/>
-            <SignUpForm/>
+            <SignUpForm rightButtonText={rightButtonText} setRightButtonText={setRightButtonText}/>
         </ScreenContainer>
     )
 }

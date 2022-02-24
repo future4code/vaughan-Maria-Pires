@@ -9,13 +9,13 @@ import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 
 
-const LoginPage = () => {
+const LoginPage = ({rightButtonText, setRightButtonText}) => {
     useUnprotectedPage()
     const navigate = useNavigate()
     return (
         <ScreenContainer>
             <LogoImage src={logo} />
-            <LoginForm/>
+            <LoginForm rightButtonText={rightButtonText} setRightButtonText={setRightButtonText}/>
                 <SignUpButtonContainer>
                     <Button
                     onClick={() => goToSignUp(navigate)}

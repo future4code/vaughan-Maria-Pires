@@ -6,12 +6,12 @@ import { signUp } from "../../services/user";
 import { InputsContainer, SignUpButtonContainer } from "../LoginPage/styled";
 
 
-const SignUpForm = () => {
+const SignUpForm = ({rightButtonText, setRightButtonText}) => {
     const [form, onChange, clear] = useForm({ name: "", email: "", password: "" })
     const navigate = useNavigate()
     const onSubmitForm = (event) => {
         event.preventDefault()
-        signUp(form, clear, navigate)
+        signUp(form, clear, navigate, setRightButtonText)
     }
     return (
         <InputsContainer>
