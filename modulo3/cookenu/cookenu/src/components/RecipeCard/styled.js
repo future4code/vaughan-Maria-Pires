@@ -8,6 +8,8 @@ align-items: center;
 width: 15vw;
 margin-top: 8vh;
 margin-left: 2vh;
+max-width: 600px;
+min-width: 300px
 `
 
 export const RecipeListContainer = styled.div`

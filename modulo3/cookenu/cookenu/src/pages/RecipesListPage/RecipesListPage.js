@@ -8,6 +8,7 @@ import { goToAddRecipes } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { goToRecipeDetails } from "../../routes/coordinator";
+import Loading from "../../Loading/Loading";
 
 const RecipesListPage = () => {
     useProtectedPage()
@@ -29,12 +30,12 @@ const RecipesListPage = () => {
     })
     return (
         <RecipeListContainer>
-            {recipeCards}
+            {recipeCards.length > 0 ? recipeCards : <Loading />}
             <AddRecipeButton
-            color={"primary"}
-            onClick={() => goToAddRecipes(navigate)}
+                color={"primary"}
+                onClick={() => goToAddRecipes(navigate)}
             >
-            <big><big><big><big>+</big></big></big></big>
+                <big><big><big><big>+</big></big></big></big>
             </AddRecipeButton>
         </RecipeListContainer>
     )
