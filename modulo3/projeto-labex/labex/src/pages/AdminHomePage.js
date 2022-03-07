@@ -12,7 +12,7 @@ export const AdminHomePage = () => {
                 }
             })
                 .then((res) => {
-                    console.log(res.data)
+                    console.log(res.data.trips)
                 })
                 .catch((err) => {
                     console.log(err)
@@ -29,6 +29,12 @@ export const AdminHomePage = () => {
             <button onClick={() => navigate(-1)}>Voltar</button>
             <button onClick={goToCreateTrip}>Criar viagem</button>
             <button>Logout</button>
+            
+            
+            
+            
+            
+            
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 
 export const ScreenContainer = styled.div`
@@ -22,8 +22,5 @@ margin-bottom: 25px;
 export const SignUpButtonContainer = styled.div`
 width: 80vw;
 max-width: 450px;
-`
-
-export const SignInButtonContainer = styled.div`
 margin-top: 15px;
 `

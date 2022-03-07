@@ -1,7 +1,10 @@
 import React from "react";
+import useProtectedPage from "../../hooks/useProtectedPage";
+
 
 const PostPage = () => {
-    return(
+    useProtectedPage()
+    return (
         <h1>Página do post!!!!!</h1>
     )
 }

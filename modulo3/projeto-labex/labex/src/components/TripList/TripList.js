@@ -1,11 +1,14 @@
-import React from "react";
+import { React } from "react";
 import { TripCard } from "./styled";
+
 
 const TripList = (props) => {
     return(
         <TripCard>
-            <p>oi</p>
-            <p>Duração em dias</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
         </TripCard>
     )
 }
