@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
+
 export const ScreenContainer = styled.div`
 display: flex;
 justify-content: center;
-background-color: #000000;
+height: 100vh;
 `
 
 export const CardContainer = styled.div`
-background-color: #f2ccff;
+background-color: #ffe6e6;
 border-radius: 10px;
 max-width: 350px;
 position: absolute;
@@ -17,27 +18,17 @@ transform: translateY(-50%);
 
 `
 export const CardHeader = styled.div`
-background-color: black;
 display: flex;
 justify-content: space-between;
-margin-left: 15px;
-text-align: center;
+margin-right: 25px;
 `
-
-export const CardMedia = styled.img`
-width: 100%;
-height: 250px;
-`;
-
-export const Text = styled.div`
-margin-left: 15px;
-`
-
-
-export const CardFooter = styled.div`
-height: 30px;
+export const CardContent = styled.div`
 display: flex;
+justify-content: center;
 align-items: center;
-justify-content: space-between;
-margin: 10px 5px;
 `
+
+export const CardImage = styled.img`
+border-radius: 50%;
+`
+

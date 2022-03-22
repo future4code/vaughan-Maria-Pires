@@ -16,7 +16,7 @@ const ProfileCard = (props) => {
                     <h2>Astromatch</h2>
                     <Button onClick={() => goToMatchesPage(navigate)}><People /></Button>
                 </CardHeader>
-                <hr />
+                <hr/>
                 <CardMedia
                     src={props.prof.photo}
                 />

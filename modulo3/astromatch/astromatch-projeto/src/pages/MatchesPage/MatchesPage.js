@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MatchesCard from "../../components/MatchesCard/MatchesCard";
+import { ScreenContainer } from "../../components/MatchesCard/styled";
 import { BASE_URL } from "../../constants/urls";
 
 const MatchesPage = () => {
@@ -9,6 +11,7 @@ const MatchesPage = () => {
         axios.get(`${BASE_URL}matches`)
             .then((res) => {
                 console.log(res.data)
+                setMatches(res.data)
             })
             .catch((err) => {
                 console.log(err)
@@ -18,13 +21,11 @@ const MatchesPage = () => {
     useEffect(() => {
         getMatches()
     }, [])
-
-
-
+    
     return (
-        <div>
-            <h1>Página dos matches</h1>
-        </div>
+        <ScreenContainer>
+            <MatchesCard/>
+        </ScreenContainer>
     )
 }
 

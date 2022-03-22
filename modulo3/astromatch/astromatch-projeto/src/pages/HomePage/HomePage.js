@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
-import { BASE_URL, bodyDislike, bodyLike } from "../../constants/urls";
+import { BASE_URL } from "../../constants/urls";
 
 const HomePage = () => {
     const [profile, setProfile] = useState({})
@@ -18,7 +18,11 @@ const HomePage = () => {
     }
 
     const choosePerson = (id) => {
-        axios.post(`${BASE_URL}choose-person`, bodyLike)
+        const body = {
+            id: profile.id,
+            choice: true
+        }
+        axios.post(`${BASE_URL}choose-person`, body)
             .then((res) => {
                 getProfileToChoose()
             })
@@ -27,8 +31,12 @@ const HomePage = () => {
             })
     }
 
-    const notChoosePerson = (id) => {
-        axios.post(`${BASE_URL}choose-person`, bodyDislike)
+    const notChoosePerson = () => {
+        const body = {
+            id: profile.id,
+            choice: false
+        }
+        axios.post(`${BASE_URL}choose-person`, body)
             .then((res) => {
                 getProfileToChoose()
             })
@@ -43,7 +51,9 @@ const HomePage = () => {
 
     return (
         <div>
-            <ProfileCard prof={profile} like={choosePerson} dislike={notChoosePerson} />
+            {
+                profile.id ? <ProfileCard prof={profile} like={choosePerson} dislike={notChoosePerson}/> : <p>Carregando...</p>
+            }
         </div>
     )
 }
