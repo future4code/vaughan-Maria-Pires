@@ -12,6 +12,7 @@ const MatchesCard = (props) => {
                 <Button onClick={() => goToHomePage(navigate)}><People /></Button>
                 <h2>Astromatch</h2>
             </CardHeader>
+            <button onClick={props.clear}>Apagar todos os matches</button>
         </CardContainer>
     )
 }

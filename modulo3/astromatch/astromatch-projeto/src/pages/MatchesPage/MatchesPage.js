@@ -21,10 +21,20 @@ const MatchesPage = () => {
     useEffect(() => {
         getMatches()
     }, [])
+
+    const clear = () => {
+        axios.put(`${BASE_URL}clear`)
+        .then((res) => {
+            setMatches(res.data)
+        })
+        .catch((err) => {
+            alert("Ocorreu um erro. Tente novamente mais tarde.")
+        })
+    }
     
     return (
         <ScreenContainer>
-            <MatchesCard/>
+            <MatchesCard clear={clear}/>
         </ScreenContainer>
     )
 }

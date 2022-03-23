@@ -45,6 +45,7 @@ const HomePage = () => {
             })
     }
 
+
     useEffect(() => {
         getProfileToChoose()
     }, [])

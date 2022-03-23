@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ScreenContainer = styled.div`
 display: flex;
 justify-content: center;
-background-color: #000000;
 `
 
 export const CardContainer = styled.div`
@@ -17,7 +16,6 @@ transform: translateY(-50%);
 
 `
 export const CardHeader = styled.div`
-background-color: black;
 display: flex;
 justify-content: space-between;
 margin-left: 15px;
