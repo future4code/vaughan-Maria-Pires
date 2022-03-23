@@ -24,11 +24,16 @@ margin-right: 25px;
 `
 export const CardContent = styled.div`
 display: flex;
-justify-content: center;
-align-items: center;
+justify-content: flex-start;
+margin: 20px;
+`
+export const DivContent = styled.div`
+display: flex;
+margin-left: 10px;
 `
 
 export const CardImage = styled.img`
-border-radius: 50%;
+border-radius: 25%;
+width: 50px;
 `
 
