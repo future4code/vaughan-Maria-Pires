@@ -8,7 +8,7 @@ export const ListTripPage = () => {
     useEffect(() => {
         axios.get(`${BASE_URL}/trips`)
             .then((res) => {
-                console.log(res.data)
+                console.log(res.data.trips)
                 localStorage.setItem("data", res.data)
             })
             .catch((err) => {
@@ -19,6 +19,7 @@ export const ListTripPage = () => {
     const goToApplicationFormPage = () => {
         navigate("../trips/application")    
     }
+
     return(
         <div>
             <h1>ListTripPage</h1>
