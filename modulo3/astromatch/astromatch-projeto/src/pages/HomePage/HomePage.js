@@ -1,29 +1,24 @@
-import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import Main from "../../components/Main/Main";
 import { BASE_URL } from "../../constants/urls";
-import { ButtonContainer, CenterLoading } from "./styled";
-
-
 
 const HomePage = () => {
     const [profile, setProfile] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
+
 
     const getProfileToChoose = () => {
         axios.get(`${BASE_URL}person`)
             .then((res) => {
                 setProfile(res.data.profile)
                 console.log(res.data.profile)
-                setIsLoading(false)
             })
             .catch((error) => {
                 alert(error)
             })
     }
 
-    const choosePerson = (id) => {
+    const choosePerson = () => {
         const body = {
             id: profile.id,
             choice: true
@@ -58,11 +53,7 @@ const HomePage = () => {
 
     return (
         <div>
-            {
-                isLoading ? <CenterLoading><CircularProgress/></CenterLoading> :<ProfileCard prof={profile} like={choosePerson} dislike={notChoosePerson}/> 
-            }
-            <ButtonContainer>
-            </ButtonContainer>
+            <Main profile={profile} choosePerson={choosePerson} notChoosePerson={notChoosePerson}/>
         </div>
     )
 }
