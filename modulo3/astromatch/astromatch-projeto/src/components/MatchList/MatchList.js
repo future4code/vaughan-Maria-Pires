@@ -2,13 +2,12 @@ import React from "react";
 import MatchListItem from "./MatchListItem";
 import { MatchListDiv } from "./styled";
 
-const MatchList = () => {
+const MatchList = (props) => {
     return(
         <MatchListDiv>
-            <MatchListItem/>
-            <MatchListItem/>
-            <MatchListItem/>
-            <MatchListItem/>
+            {props.matches.map((match) => {
+                return <MatchListItem key={match.id} match={match}/>
+            })}
         </MatchListDiv>
     )
 }

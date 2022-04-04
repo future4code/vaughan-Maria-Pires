@@ -1,22 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "../AppBar/AppBar";
-import ChooseProfile from "../ChooseProfile/ChooseProfile";
-import MatchList from "../MatchList/MatchList";
-import ResetButton from "../ResetButton/ResetButton";
 import { MainContainer, ScreenContainer } from "./styled";
+import HomePage from "../../pages/HomePage/HomePage";
+import MatchesPage from "../../pages/MatchesPage/MatchesPage";
 
 
-const Main = (props) => {
+const Main = () => {
+    const [selectedPage, setSelectedPage] = useState('chooseProfile')
+
+    const renderSelectedPage = () => {
+        switch (selectedPage) {
+            case 'chooseProfile':
+                return <HomePage />
+            case 'matchList':
+                return <MatchesPage />
+            default:
+                return <HomePage />
+        }
+
+    }
+    const goToChooseProfile = () => {
+        setSelectedPage('chooseProfile')
+    }
+
+    const goToMatchList = () => {
+        setSelectedPage('matchList')
+    }
+
     return (
         <div>
             <ScreenContainer>
                 <MainContainer>
-                    <AppBar />
-                    <ChooseProfile profile={props.profile} choosePerson={props.choosePerson} notChoosePerson={props.notChoosePerson} />
-                    {/*<MatchList  />*/}
+                    <AppBar selectedPage={selectedPage} goToMatchList={goToMatchList} goToChooseProfile={goToChooseProfile} />
+                    {renderSelectedPage()}
                 </MainContainer>
             </ScreenContainer>
-            <ResetButton />
         </div>
     )
 }

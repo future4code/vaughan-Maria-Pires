@@ -1,43 +1,39 @@
+import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Main from "../../components/Main/Main";
+import MatchListItem from "../../components/MatchList/MatchListItem";
+import { MatchListDiv } from "../../components/MatchList/styled";
 import { BASE_URL } from "../../constants/urls";
+import { CenterLoading } from "../HomePage/styled";
 
 
 const MatchesPage = () => {
     const [matches, setMatches] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     const getMatches = () => {
         axios.get(`${BASE_URL}matches`)
             .then((res) => {
-                console.log(res.data.matches)
                 setMatches(res.data.matches)
+                setIsLoading(false)
             })
             .catch((err) => {
-                console.log(err)
+                alert(err.message)
+                setIsLoading(false)
             })
     }
 
     useEffect(() => {
         getMatches()
     }, [])
-
-    const clear = () => {
-        axios.put(`${BASE_URL}clear`)
-            .then((res) => {
-                setMatches(res.data.matches)
-            })
-            .catch((err) => {
-                alert("Ocorreu um erro. Tente novamente mais tarde.")
-            })
-    }
-
-   
-
+       
     return (
-        <div>
-            <Main/>
-        </div>
+        <MatchListDiv>
+            {isLoading ? <CenterLoading><CircularProgress/></CenterLoading> : 
+                matches.map((match) => {
+                return <MatchListItem key={match.name} match={match}/>
+            })}
+        </MatchListDiv>
     )
 }
 
