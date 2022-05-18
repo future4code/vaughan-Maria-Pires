@@ -1,4 +1,3 @@
-import { MenuItem, Select } from '@material-ui/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MegaSena from "../src/pages/MegaSena/MegaSena";
@@ -8,7 +7,7 @@ import LotoMania from "../src/pages/LotoMania/LotoMania";
 import TimeMania from "../src/pages/TimeMania/TimeMania";
 import DiaDeSorte from "../src/pages/DiaDeSorte/DiaDeSorte";
 import { BASE_URL } from './constants/urls';
-import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar } from './styled/styled';
+import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar, SelectInput } from './styled/styled';
 import "./App.css";
 
 
@@ -38,7 +37,7 @@ function App() {
   }
 
   const mappedLotteries = !selectLottery ? [] : selectLottery.map((lottery) => {
-    return <MenuItem key={lottery.id} value={lottery.nome}>{lottery.nome}</MenuItem>
+    return <option key={lottery.id} value={lottery.nome}>{lottery.nome.toUpperCase()}</option>
   })
 
   useEffect(() => {
@@ -59,13 +58,12 @@ function App() {
     {lottery === "lotomania" && <OrangeSideBar/>}
     {lottery === "timemania" && <DarkGreenSideBar/>}
     {lottery === "dia de sorte" && <LightBrownSideBar/>}
-        <Select
+        <SelectInput
           value={lottery}
           onChange={handleSetLottery}
-          variant="outlined"
-          displayEmpty>
+        >
           {mappedLotteries}
-        </Select>
+        </SelectInput>
         {megaSenaContentVisible && <MegaSena />}
         {quinaContentVisible && <Quina />}
         {lotoFacilContentVisible && <LotoFacil />}

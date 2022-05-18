@@ -2,18 +2,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import moment from "moment";
+import { NumberContainer } from "../../styled/styled";
 
 const LotoFacil = () => {
     const [lotteryContest, setLotteryContest] = useState({})
 
     const getContests = () => {
         axios.get(`${BASE_URL}/concursos/2200`)
-        .then((res) => {
-            setLotteryContest(res.data)
-        })
-        .catch((err) => {
-            alert(err.message)
-        })
+            .then((res) => {
+                setLotteryContest(res.data)
+            })
+            .catch((err) => {
+                alert(err.message)
+            })
     }
 
     useEffect(() => {
@@ -21,16 +22,15 @@ const LotoFacil = () => {
     }, [])
     return (
         <>
-        <h1>Loto fácil</h1>
-        <h2>Concurso: {lotteryContest.id}</h2>
-        <h4>{moment(lotteryContest.data).format("DD/MM/YYYY")}</h4>
-        {lotteryContest.numeros && <>
-                <a>{lotteryContest.numeros[0]}</a>
-                <a>{lotteryContest.numeros[1]}</a>
-                <a>{lotteryContest.numeros[2]} </a>
-                <a>{lotteryContest.numeros[3]} </a>
-                <a>{lotteryContest.numeros[4]} </a>
-                <a>{lotteryContest.numeros[5]} </a>
+            <h1>Loto fácil</h1>
+            <h2>Concurso: {lotteryContest.id}</h2>
+            <h4>{moment(lotteryContest.data).format("DD/MM/YYYY")}</h4>
+            {lotteryContest.numeros && <>
+                <NumberContainer>{lotteryContest.numeros[0]}</NumberContainer>
+                <NumberContainer>{lotteryContest.numeros[1]}</NumberContainer>
+                <NumberContainer>{lotteryContest.numeros[2]} </NumberContainer>
+                <NumberContainer>{lotteryContest.numeros[3]} </NumberContainer>
+                <NumberContainer>{lotteryContest.numeros[4]} </NumberContainer>
             </>}
         </>
     )
