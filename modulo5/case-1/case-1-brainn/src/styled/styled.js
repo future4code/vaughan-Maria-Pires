@@ -75,6 +75,8 @@ width: 60px;
 height: 60px;
 background-color: white;
 border-radius: 50%;
-margin: 20px;
+margin: 10px;
 color: black;
+font-weight: bolder;
+font-size: large;
 `
