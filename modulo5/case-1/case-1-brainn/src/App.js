@@ -8,7 +8,7 @@ import LotoMania from "../src/pages/LotoMania/LotoMania";
 import TimeMania from "../src/pages/TimeMania/TimeMania";
 import DiaDeSorte from "../src/pages/DiaDeSorte/DiaDeSorte";
 import { BASE_URL } from './constants/urls';
-import { SideBar } from './styled/styled';
+import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar } from './styled/styled';
 import "./App.css";
 
 
@@ -52,7 +52,13 @@ function App() {
   }, [lottery])
 
   return (
-    <SideBar>
+    <>
+    {lottery === "mega-sena" && <GreenSideBar/>}
+    {lottery === "quina" && <PurpleSideBar/>}
+    {lottery === "lotofácil" && <FuchsiaSideBar/>}
+    {lottery === "lotomania" && <OrangeSideBar/>}
+    {lottery === "timemania" && <DarkGreenSideBar/>}
+    {lottery === "dia de sorte" && <LightBrownSideBar/>}
         <Select
           value={lottery}
           onChange={handleSetLottery}
@@ -66,7 +72,7 @@ function App() {
         {lotoManiaContentVisible && <LotoMania />}
         {timeManiaContentVisible && <TimeMania />}
         {diaDeSorteContentVisible && <DiaDeSorte />}
-      </SideBar>
+      </>
   );
 }
 
