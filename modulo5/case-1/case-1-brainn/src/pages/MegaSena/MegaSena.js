@@ -3,6 +3,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../../constants/urls";
 
+
 const MegaSena = () => {
     const [lotteryContest, setLotteryContest] = useState({})
    
@@ -22,7 +23,7 @@ const MegaSena = () => {
     }, [])
 
     return (
-        <>
+        <aside>
             <h1>MegaSena</h1>
             <h2>Concurso: {lotteryContest.id}</h2>
             <h4>{moment(lotteryContest.data).format("DD/MM/YYYY")}</h4>
@@ -34,7 +35,7 @@ const MegaSena = () => {
                 <a>{lotteryContest.numeros[4]} </a>
                 <a>{lotteryContest.numeros[5]} </a>
             </>}
-        </>
+        </aside>
     )
 }
 

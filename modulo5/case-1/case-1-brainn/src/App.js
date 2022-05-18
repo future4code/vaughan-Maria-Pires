@@ -1,4 +1,3 @@
-import './App.css';
 import { MenuItem, Select } from '@material-ui/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -9,10 +8,12 @@ import LotoMania from "../src/pages/LotoMania/LotoMania";
 import TimeMania from "../src/pages/TimeMania/TimeMania";
 import DiaDeSorte from "../src/pages/DiaDeSorte/DiaDeSorte";
 import { BASE_URL } from './constants/urls';
+import { SideBar } from './styled/styled';
+import "./App.css";
 
 
 function App() {
-  const [lottery, setLottery] = useState("");
+  const [lottery, setLottery] = useState("mega-sena");
   const [selectLottery, setSelectLottery] = useState("");
   const [megaSenaContentVisible, setMegaSenaContentVisible] = useState(false);
   const [quinaContentVisible, setQuinaContentVisible] = useState(false);
@@ -51,23 +52,21 @@ function App() {
   }, [lottery])
 
   return (
-    <div>
-      <Select
-        value={lottery}
-        onChange={handleSetLottery}
-        variant="outlined"
-        displayEmpty>
-        <MenuItem value="">Selecione uma loteria</MenuItem>
-        {mappedLotteries}
-      </Select>
-      {megaSenaContentVisible && <MegaSena />}
-      {quinaContentVisible && <Quina />}
-      {lotoFacilContentVisible && <LotoFacil />}
-      {lotoManiaContentVisible && <LotoMania />}
-      {timeManiaContentVisible && <TimeMania />}
-      {diaDeSorteContentVisible && <DiaDeSorte />}
-
-    </div >
+    <SideBar>
+        <Select
+          value={lottery}
+          onChange={handleSetLottery}
+          variant="outlined"
+          displayEmpty>
+          {mappedLotteries}
+        </Select>
+        {megaSenaContentVisible && <MegaSena />}
+        {quinaContentVisible && <Quina />}
+        {lotoFacilContentVisible && <LotoFacil />}
+        {lotoManiaContentVisible && <LotoMania />}
+        {timeManiaContentVisible && <TimeMania />}
+        {diaDeSorteContentVisible && <DiaDeSorte />}
+      </SideBar>
   );
 }
 
