@@ -7,7 +7,7 @@ import LotoMania from "../src/pages/LotoMania/LotoMania";
 import TimeMania from "../src/pages/TimeMania/TimeMania";
 import DiaDeSorte from "../src/pages/DiaDeSorte/DiaDeSorte";
 import { BASE_URL } from './constants/urls';
-import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar, SelectInput } from './styled/styled';
+import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar, SelectInput} from './styled/styled';
 import "./App.css";
 
 
@@ -52,25 +52,26 @@ function App() {
 
   return (
     <>
-    {lottery === "mega-sena" && <GreenSideBar/>}
-    {lottery === "quina" && <PurpleSideBar/>}
-    {lottery === "lotofácil" && <FuchsiaSideBar/>}
-    {lottery === "lotomania" && <OrangeSideBar/>}
-    {lottery === "timemania" && <DarkGreenSideBar/>}
-    {lottery === "dia de sorte" && <LightBrownSideBar/>}
-        <SelectInput
-          value={lottery}
-          onChange={handleSetLottery}
-        >
-          {mappedLotteries}
-        </SelectInput>
-        {megaSenaContentVisible && <MegaSena />}
-        {quinaContentVisible && <Quina />}
-        {lotoFacilContentVisible && <LotoFacil />}
-        {lotoManiaContentVisible && <LotoMania />}
-        {timeManiaContentVisible && <TimeMania />}
-        {diaDeSorteContentVisible && <DiaDeSorte />}
-      </>
+      {lottery === "mega-sena" && <GreenSideBar />}
+      {lottery === "quina" && <PurpleSideBar />}
+      {lottery === "lotofácil" && <FuchsiaSideBar />}
+      {lottery === "lotomania" && <OrangeSideBar />}
+      {lottery === "timemania" && <DarkGreenSideBar />}
+      {lottery === "dia de sorte" && <LightBrownSideBar />}
+      
+      <SelectInput
+        value={lottery}
+        onChange={handleSetLottery}
+      >
+        {mappedLotteries}
+      </SelectInput>
+      {megaSenaContentVisible && <MegaSena />}
+      {quinaContentVisible && <Quina />}
+      {lotoFacilContentVisible && <LotoFacil />}
+      {lotoManiaContentVisible && <LotoMania />}
+      {timeManiaContentVisible && <TimeMania />}
+      {diaDeSorteContentVisible && <DiaDeSorte />}
+    </>
   );
 }
 

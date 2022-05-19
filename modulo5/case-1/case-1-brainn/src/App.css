@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f0f0f5;
-    
+    background-color: #e6e6e6;
+    overflow-x: hidden;
+    position: relative;
 }
