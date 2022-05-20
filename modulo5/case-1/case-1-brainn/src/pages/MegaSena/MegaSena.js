@@ -2,7 +2,8 @@ import axios from "axios"
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../../constants/urls";
-import { DrawNumbers, NumberContainer } from "../../styled/styled";
+import { DrawNumbers, NumberContainer } from "../../styledComponents/styled";
+import { H4, MeganSenaTitle, MegaSenaSubTitleDiv } from "./styled";
 
 
 const MegaSena = () => {
@@ -25,9 +26,11 @@ const MegaSena = () => {
 
     return (
         <>
-                <h1>MegaSena</h1>
-                <h4>Concurso</h4>
-                <h4>{lotteryContest.id} - {moment(lotteryContest.data).format("DD/MM/YYYY")}</h4>
+            <MeganSenaTitle>MEGASENA</MeganSenaTitle>
+            <MegaSenaSubTitleDiv>
+                <H4>CONCURSO</H4>
+                <H4>{lotteryContest.id} - {moment(lotteryContest.data).format("DD/MM/YYYY")}</H4>
+            </MegaSenaSubTitleDiv>
             <DrawNumbers>
                 {lotteryContest.numeros && <>
                     <NumberContainer>{lotteryContest.numeros[0]} </NumberContainer>

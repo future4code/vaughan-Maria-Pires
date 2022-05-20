@@ -2,7 +2,8 @@ import axios from "axios"
 import moment from "moment"
 import { useEffect, useState } from "react"
 import { BASE_URL } from "../../constants/urls"
-import { DrawNumbers, NumberContainer } from "../../styled/styled"
+import { DrawNumbers, NumberContainer } from "../../styledComponents/styled"
+import { H4, TimeManiaSubtitleDiv, TimeManiaTitle } from "./styled"
 
 const TimeMania = () => {
   const [lotteryContest, setLotteryContest] = useState({})
@@ -24,9 +25,11 @@ const TimeMania = () => {
 
   return (
     <>
-      <h1>Time mania</h1>
-      <h2>Concurso: {lotteryContest.id}</h2>
-      <h4>{moment(lotteryContest.data).format("DD/MM/YYYY")}</h4>
+      <TimeManiaTitle>TIME MANIA</TimeManiaTitle>
+      <TimeManiaSubtitleDiv>
+        <H4>CONCURSO</H4>
+        <H4>{lotteryContest.id} - {moment(lotteryContest.data).format("DD/MM/YYYY")}</H4>
+      </TimeManiaSubtitleDiv>
       <DrawNumbers>
         {lotteryContest.numeros && <>
           <NumberContainer>{lotteryContest.numeros[0]} </NumberContainer>

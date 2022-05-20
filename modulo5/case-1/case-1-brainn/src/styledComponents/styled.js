@@ -12,14 +12,14 @@ font-weight: bold;
 `
 
 export const GreenSideBar = styled.div`
-display: inline;
 position: absolute;
 right: 65%;
 left: 0%;
 top: 0%;
 bottom: 0%;
 background: #6BEFA3;
-;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
 
 `
 
@@ -30,6 +30,8 @@ left: 0%;
 top: 0%;
 bottom: 0%;
 background: #8666EF;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
 
 `
 
@@ -40,6 +42,8 @@ left: 0%;
 top: 0%;
 bottom: 0%;
 background: #DD7AC6;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
 `
 
 export const OrangeSideBar = styled.div`
@@ -49,6 +53,8 @@ left: 0%;
 top: 0%;
 bottom: 0%;
 background: #FFAB64;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
 `
 
 export const DarkGreenSideBar = styled.div`
@@ -58,6 +64,8 @@ left: 0%;
 top: 0%;
 bottom: 0%;
 background: #5AAD7D;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
 `
 
 export const LightBrownSideBar = styled.div`
@@ -67,9 +75,12 @@ left: 0%;
 top: 0%;
 bottom: 0%;
 background: #BFAF83;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
 ;
 `
 export const NumberContainer = styled.div`
+margin: 40px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -85,12 +96,5 @@ font-size: large;
 
 export const DrawNumbers = styled.div`
 display: flex;
-position: relative;
 left: 50%;
-`
-
-export const MeganSenaTitle = styled.h1`
-background-color: #6BEFA3;
-width: 30%;
-
 `

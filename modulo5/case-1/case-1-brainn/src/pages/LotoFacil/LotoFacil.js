@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import moment from "moment";
-import { DrawNumbers, NumberContainer } from "../../styled/styled";
+import { DrawNumbers, NumberContainer } from "../../styledComponents/styled";
+import { H4, LotoFacilSubtitleDiv, LotoFacilTitle } from "./styled";
 
 const LotoFacil = () => {
     const [lotteryContest, setLotteryContest] = useState({})
@@ -22,9 +23,11 @@ const LotoFacil = () => {
     }, [])
     return (
         <>
-            <h1>Loto fácil</h1>
-            <h2>Concurso: {lotteryContest.id}</h2>
-            <h4>{moment(lotteryContest.data).format("DD/MM/YYYY")}</h4>
+            <LotoFacilTitle>LOTOFÁCIL</LotoFacilTitle>
+            <LotoFacilSubtitleDiv>
+            <H4>CONCURSO</H4> 
+            <H4>{lotteryContest.id} - {moment(lotteryContest.data).format("DD/MM/YYYY")}</H4>
+            </LotoFacilSubtitleDiv>
             <DrawNumbers>
                 {lotteryContest.numeros && <>
                     <NumberContainer>{lotteryContest.numeros[0]}</NumberContainer>
