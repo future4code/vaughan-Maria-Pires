@@ -117,14 +117,18 @@ export const NumberContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-width: 70px;
-height: 70px;
+width: 76px;
+height: 76px;
 background-color: white;
 border-radius: 50%;
 margin: 10px;
 color: black;
 font-weight: bolder;
-font-size: large;
+font-size: large; 
+@media(max-width: 600px){
+    width: 58px;
+    height: 58px;
+}  
 `
 
 export const DrawNumbers = styled.div`
@@ -132,7 +136,6 @@ display: flex;
 left: 50%;
 margin-top: 10%;
 @media(max-width: 600px){
-    margin-top: 80%;
-    display: flex;
-} 
+    margin-top: 350px;
+}
 `
