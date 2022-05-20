@@ -2,8 +2,8 @@ import axios from "axios"
 import moment from "moment"
 import { useEffect, useState } from "react"
 import { BASE_URL } from "../../constants/urls"
-import { DrawNumbers, NumberContainer } from "../../styledComponents/styled"
-import { DiaDeSorteSubtitleDiv, DiaDeSorteTitle, H4 } from "./styled"
+import { DrawNumbers, NumberContainer } from "../../styledGeneral/styled"
+import { DiaDeSorteSubtitleDiv, DiaDeSorteTitle, H4, H4Mobile } from "./styled"
 
 const DiaDeSorte = () => {
   const [lotteryContest, setLotteryContest] = useState({})
@@ -27,6 +27,7 @@ const DiaDeSorte = () => {
       <DiaDeSorteSubtitleDiv>
         <H4>CONCURSO</H4>
         <H4>{lotteryContest.id} - {moment(lotteryContest.data).format("DD/MM/YYYY")}</H4>
+        <H4Mobile>CONCURSO Nº {lotteryContest.id}</H4Mobile>
       </DiaDeSorteSubtitleDiv>
       <DrawNumbers>
         {lotteryContest.numeros && <>

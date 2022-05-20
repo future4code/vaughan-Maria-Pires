@@ -7,7 +7,7 @@ import LotoMania from "../src/pages/LotoMania/LotoMania";
 import TimeMania from "../src/pages/TimeMania/TimeMania";
 import DiaDeSorte from "../src/pages/DiaDeSorte/DiaDeSorte";
 import { BASE_URL } from './constants/urls';
-import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar, SelectInput} from './styledComponents/styled';
+import { DarkGreenSideBar, FuchsiaSideBar, GreenSideBar, LightBrownSideBar, OrangeSideBar, PurpleSideBar, SelectInput} from './styledGeneral/styled';
 import "./App.css";
 
 
