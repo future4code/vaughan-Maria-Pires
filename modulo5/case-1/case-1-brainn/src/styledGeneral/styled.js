@@ -124,11 +124,10 @@ border-radius: 50%;
 margin: 10px;
 color: black;
 font-weight: bolder;
-font-size: large; 
+font-size: large;  
 @media(max-width: 600px){
-    width: 58px;
-    height: 58px;
-}  
+    height: 60px;
+} 
 `
 
 export const DrawNumbers = styled.div`
@@ -136,6 +135,10 @@ display: flex;
 left: 50%;
 margin-top: 10%;
 @media(max-width: 600px){
-    margin-top: 350px;
+    width: 320px;
+    position: relative;
+    top: 340px;
+    left: 8%;
+    right: 45px;
 }
 `

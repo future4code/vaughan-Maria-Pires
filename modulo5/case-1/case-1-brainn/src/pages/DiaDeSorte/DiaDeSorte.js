@@ -36,7 +36,7 @@ const DiaDeSorte = () => {
           <NumberContainer>{lotteryContest.numeros[2]} </NumberContainer>
           <NumberContainer>{lotteryContest.numeros[3]} </NumberContainer>
           <NumberContainer>{lotteryContest.numeros[4]} </NumberContainer>
-          <NumberContainer>{lotteryContest.numeros[5]}</NumberContainer>
+          <NumberContainer>{lotteryContest.numeros[5]} </NumberContainer>
         </>}
       </DrawNumbers>
     </>
