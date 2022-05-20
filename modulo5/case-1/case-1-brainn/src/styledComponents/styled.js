@@ -97,4 +97,5 @@ font-size: large;
 export const DrawNumbers = styled.div`
 display: flex;
 left: 50%;
+margin-top: 150px;
 `

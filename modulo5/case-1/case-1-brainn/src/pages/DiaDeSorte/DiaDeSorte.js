@@ -23,10 +23,10 @@ const DiaDeSorte = () => {
   }, [])
   return (
     <>
-      <DiaDeSorteTitle>Dia de sorte</DiaDeSorteTitle>
+      <DiaDeSorteTitle>DIA DE SORTE</DiaDeSorteTitle>
       <DiaDeSorteSubtitleDiv>
         <H4>CONCURSO</H4>
-        <H4>{moment(lotteryContest.data).format("DD/MM/YYYY")}</H4>
+        <H4>{lotteryContest.id} - {moment(lotteryContest.data).format("DD/MM/YYYY")}</H4>
       </DiaDeSorteSubtitleDiv>
       <DrawNumbers>
         {lotteryContest.numeros && <>
