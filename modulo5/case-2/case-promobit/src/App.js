@@ -1,10 +1,13 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Router from './Router/Router';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>PromoBit</h1>
-    </div>
+    <BrowserRouter>
+      <Router/>
+    </BrowserRouter>
   );
 }
 
