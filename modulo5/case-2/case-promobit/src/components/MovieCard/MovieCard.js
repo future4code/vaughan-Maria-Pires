@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import { CardContainer } from "./styled";
+import { CardContainer, P, ReleaseDate } from "./styled";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { goToDetailsPage } from "../../Router/coordinator";
@@ -13,8 +13,8 @@ const MovieCard = (props) => {
     return(
         <CardContainer>
             <Button onClick={() => onClickMovie(props.movieId)}><img src={props.imgSrc}/></Button>
-            <p>{props.title}</p>
-            <p>{moment(props.date).format("MMM Do YY")}</p>
+            <P>{props.title}</P>
+            <ReleaseDate>{moment(props.date).format("MMM Do YY").toLocaleUpperCase()}</ReleaseDate>
         </CardContainer>
     )
 }

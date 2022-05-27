@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const CheckboxContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+display: flex;
+flex-wrap: wrap;
 align-items: center;
+margin: auto;
 width: 600px;
+margin-bottom: 80px;
 `

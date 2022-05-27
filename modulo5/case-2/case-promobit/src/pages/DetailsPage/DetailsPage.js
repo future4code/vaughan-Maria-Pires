@@ -1,7 +1,10 @@
 import axios from "axios";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { TMDBNavBar } from "../../components/Header/styled";
 import { API_KEY, BASE_URL } from "../../constants/urls";
+import { Div, H2, H2Cast, H4, OverviewText, Poster, ReleaseDate } from "./styled";
 
 const DetailsPage = () => {
     const [movie, setMovie] = useState({})
@@ -18,18 +21,26 @@ const DetailsPage = () => {
             })
     }
 
+
     useEffect(() => {
         getMovieDetails()
     }, [])
 
     return (
-        <div>
-            <h2>Página de detalhes</h2>
-            <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} />
-            <h2>{movie.title} (ano)</h2>
-            <p>{movie.overview}</p>
+        <Div>
+            <TMDBNavBar>
+                <Poster src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} />
+            </TMDBNavBar>
+            <H2>{movie.title} ({moment(movie.release_date).format("YYYY")})</H2>
+            <ReleaseDate>{moment(movie.release_date).format("DD/MM/YYYY")} (BR) | {movie.vote_average} | {movie.runtime}min | {(movie.original_language).toUpperCase()}</ReleaseDate>
+            <H4>Sinopse</H4>
+            <OverviewText>{movie.overview}</OverviewText>
 
-        </div>
+            
+    
+
+
+        </Div>
     )
 }
 

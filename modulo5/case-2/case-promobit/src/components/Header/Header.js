@@ -1,13 +1,21 @@
-import { HeaderTitle, TMDBHeader, TMDBShape } from "./styled";
+import { Button } from "./styled";
+import { useNavigate } from "react-router-dom";
+import { goToHomePage } from "../../Router/coordinator";
+import { HeaderTitle, P, Text, TMDBHeader, TMDBShape } from "./styled";
 
 
 
 const Header = () => {
+    const navigate = useNavigate()
     return(
+        <>
         <TMDBHeader>
-            <HeaderTitle>TMDB</HeaderTitle> 
+            <Button onClick={() => goToHomePage(navigate)}><HeaderTitle>TMDB</HeaderTitle></Button>
             <TMDBShape/>
         </TMDBHeader>
+        </>
+        
+
     )
 }
 
