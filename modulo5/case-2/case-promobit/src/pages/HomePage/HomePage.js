@@ -20,7 +20,7 @@ const HomePage = () => {
                 setPages(res.data.total_pages)
             })
             .catch((err) => {
-                console.log(err.message)
+                alert(err.message)
             })
     }
 
@@ -29,12 +29,7 @@ const HomePage = () => {
         getMovies();
     }, [getMovies()])
 
-    const arrayOfPages = Array.from(Array(pages))
-    const mappedArrayOfPages = arrayOfPages.map((p, index) => {
-        return <button value={index + 1} onClick={(event) => setPageNumber(event.target.value)}>{index + 1}</button>
-    })
-
-
+ 
     const mappedMovies = !moviesList ? [] : moviesList.map((film) => {
         return <MovieCard key={film.id} movieId={film.id} title={film.title} date={film.release_date} imgSrc={`https://image.tmdb.org/t/p/w200/${film.poster_path}`} />
     })
