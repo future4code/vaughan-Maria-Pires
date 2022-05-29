@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieCard from "../../components/MovieCard/MovieCard";
-import { API_KEY, BASE_URL } from "../../constants/urls";
+import { API_KEY, BASE_URL, LANGUAGE } from "../../constants/urls";
 import { MoviesContainer } from "./styled";
 import { P, Text, TMDBNavBar } from "../../components/Header/styled";
 import CheckboxFilter from "../../components/CheckboxFilter/CheckboxFilter";
@@ -14,7 +14,7 @@ const HomePage = () => {
 
 
     const getMovies = () => {
-        axios.get(`${BASE_URL}/popular?api_key=${API_KEY}&page=${pageNumber}`)
+        axios.get(`${BASE_URL}/popular?api_key=${API_KEY}&language=pt-BR&page=${pageNumber}`)
             .then((res) => {
                 setMoviesList(res.data.results)
                 setPages(res.data.total_pages)

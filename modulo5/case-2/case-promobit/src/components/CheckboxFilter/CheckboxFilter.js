@@ -8,7 +8,7 @@ const CheckboxFilter = () => {
     const [selectedGenres, setSelectedGenres] = useState([])
 
     const getAllGenres = () => {
-        axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
+        axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=pt-BR`)
             .then((res) => {
                 setGenre(res.data.genres)
             })
