@@ -35,6 +35,7 @@ display: grid;
 align-items: center;
 background-color: #2D0C5E;
 color: white;  
+overflow-y: hidden;
 @media(max-width: 600px){
     width: 100%;
     height: 370px;
@@ -45,7 +46,7 @@ color: white;
 `
 export const Text = styled.h1`
 font-size: 48px;
-margin-top: 80px;
+margin-top: 90px;
 text-align: center;
 @media(max-width: 600px){
     position: absolute;
@@ -58,9 +59,10 @@ text-align: center;
 export const P = styled.p`
 text-align: center;
 text-transform: uppercase;
+margin-top: 25px;
 @media(max-width: 600px){
     position: absolute;
-    top: 30%;
+    top: 29%;
     left: 38%;
 }
 `
