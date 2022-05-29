@@ -41,10 +41,7 @@ position: absolute;
 top: 18%;
 left: 38%;
 @media(max-width: 600px){
-    font-size: medium;
-    position: absolute;
-    top: 65%;
-    left: 38%;
+    opacity: 0;
 }
 `
 
@@ -57,7 +54,7 @@ left: 38%;
     font-size: small;
     position: absolute;
     top: 68%;
-    left: 15%;
+    left: 12%;
 }
 `
 
@@ -118,8 +115,7 @@ cursor: pointer;
     color: black;
 }
 @media(max-width: 600px){
-    position: absolute;
-    top: 99%;
-    left: 30%;
+    opacity: 0;
+
 }
 `

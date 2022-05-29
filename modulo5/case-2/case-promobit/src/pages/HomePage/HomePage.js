@@ -9,7 +9,7 @@ import CheckboxFilter from "../../components/CheckboxFilter/CheckboxFilter";
 
 const HomePage = () => {
     const [moviesList, setMoviesList] = useState([])
-    const [pageNumber, setPageNumber] = useState(1)
+    const [pageNumber, setPageNumber] = useState(18)
     const [pages, setPages] = useState()
 
 

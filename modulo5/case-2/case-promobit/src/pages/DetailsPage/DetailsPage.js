@@ -40,7 +40,7 @@ const DetailsPage = () => {
                 )}</MovieInfos>
             <H4>Sinopse</H4>
             <OverviewText>{movie.overview}</OverviewText>
-            <Button onClick={() => navigate(-1)}>Voltar à página inicial</Button>
+            <Button onClick={() => navigate(-1)}>Voltar</Button>
             <GrayDiv/>
 
         </>
