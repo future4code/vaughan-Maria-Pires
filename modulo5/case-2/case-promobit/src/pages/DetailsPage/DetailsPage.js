@@ -2,7 +2,7 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { API_KEY, BASE_URL, LANGUAGE } from "../../constants/urls";
+import { API_KEY, BASE_URL } from "../../constants/urls";
 import { Button, GrayDiv, H2, H4, MovieInfos, OverviewText, Poster, Span, TMDBNavBarDetailsPage } from "./styled";
 
 const DetailsPage = () => {

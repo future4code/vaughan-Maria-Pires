@@ -1,7 +1,7 @@
 import { Button } from "./styled";
 import { useNavigate } from "react-router-dom";
 import { goToHomePage } from "../../Router/coordinator";
-import { HeaderTitle, P, Text, TMDBHeader, TMDBShape } from "./styled";
+import { HeaderTitle, TMDBHeader, TMDBShape } from "./styled";
 
 
 

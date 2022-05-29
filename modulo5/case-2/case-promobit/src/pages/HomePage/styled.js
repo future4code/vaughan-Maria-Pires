@@ -7,3 +7,10 @@ grid-template-columns: repeat(5, 1fr);
 grid-template-columns: repeat(2, 1fr);
 } 
 `
+
+export const PaginationDiv = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+
+`

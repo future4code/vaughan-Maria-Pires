@@ -5,7 +5,7 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 margin: auto;
-width: 600px;
+width: 620px;
 margin-bottom: 80px;
 @media(max-width: 600px){
     width: 320px;
