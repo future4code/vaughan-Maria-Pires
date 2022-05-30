@@ -1,9 +1,11 @@
 import './App.css';
+import SignUpForm from './components/SignUpForm/SignUpForm';
 
-function App() {
+const App = () => {
   return (
     <div>
-      CASE CLUBPETRO
+      <h1>viagens</h1>
+      <SignUpForm/>
     </div>
   );
 }
