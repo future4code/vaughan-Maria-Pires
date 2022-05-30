@@ -12,8 +12,8 @@ const HomePage = () => {
     const [moviesList, setMoviesList] = useState([])
     const [pageNumber, setPageNumber] = useState(1)
     const [pages, setPages] = useState()
- 
 
+   
     const getMovies = () => {
         axios.get(`${BASE_URL}/popular?api_key=${API_KEY}&language=pt-BR&page=${pageNumber}`)
             .then((res) => {
@@ -25,17 +25,19 @@ const HomePage = () => {
             })
     }
 
+
     const handlePage = (pageNumber) => {
         setPageNumber(pageNumber)
         window.scroll(0, 0)
     }
 
+
     useEffect(() => {
         getMovies();
     }, [getMovies()], [pageNumber])
 
-
-    const mappedMovies = !moviesList ? [] : moviesList 
+  
+    const mappedMovies = !moviesList ? [] : moviesList
     .map((film) => {
         return <MovieCard key={film.id} movieId={film.id} title={film.title} date={film.release_date} imgSrc={`https://image.tmdb.org/t/p/w200/${film.poster_path}`} />
     })
@@ -45,7 +47,7 @@ const HomePage = () => {
             <TMDBNavBar>
                 <Text>Milhões de filmes, séries e pessoas pra descobrir. Explore já.</Text>
                 <P>Filtre por:</P>
-                <CheckboxFilter />
+                <CheckboxFilter/>
             </TMDBNavBar>
             <MoviesContainer>
                 {mappedMovies}

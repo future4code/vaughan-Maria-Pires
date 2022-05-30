@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { API_KEY } from "../../constants/urls";
 import { CheckboxContainer } from "./styled";
 
-const CheckboxFilter = () => {
+const CheckboxFilter = (props) => {
     const [genre, setGenre] = useState([])
     const [selectedGenres, setSelectedGenres] = useState([])
 
@@ -13,26 +13,21 @@ const CheckboxFilter = () => {
                 setGenre(res.data.genres)
             })
             .catch((err) => {
-                console.log(err.message)
+                alert(err.message)
             })
     }
 
     useEffect(() => {
-        getAllGenres()
+        getAllGenres();
     }, [selectedGenres])
 
     const handleCheckbox = (event) => {
-        if(event.target.checked){
-            setSelectedGenres([...selectedGenres], event.target.value);
-        } else {
-            setSelectedGenres(selectedGenres.filter((movie) => {
-                return movie !== event.target.value;
-            }))
-        }
+        setSelectedGenres(event.target.value);
     }
 
+
     const checkboxGenres = genre.map((movie) => {
-        return <><input type="checkbox" value={movie.id} onChange={handleCheckbox}/>{movie.name} &nbsp;&nbsp;</>
+        return <><input type="checkbox" value={movie.id} onChange={handleCheckbox} />{movie.name} &nbsp;&nbsp;</>
     })
 
 
