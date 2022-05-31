@@ -1,6 +1,5 @@
-import { InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Button, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import axios from 'axios';
-import moment from 'moment';
 import { useEffect, useState } from 'react';
 
 const SignUpForm = () => {
@@ -8,6 +7,7 @@ const SignUpForm = () => {
     const [selectCountry, setSelectCountry] = useState("")
     const [localInput, setLocalInput] = useState("")
     const [date, setDate] = useState("")
+    const [travelsList, setTravelsList] = useState([])
 
     const getCountriesList = () => {
         axios.get("https://restcountries.com/v2/all")
@@ -16,7 +16,7 @@ const SignUpForm = () => {
                 console.log(res.data)
             })
             .catch((err) => {
-                console.log(err.message)
+                alert(err.message)
             })
     }
 
@@ -36,12 +36,24 @@ const SignUpForm = () => {
         return <MenuItem key={country.alpha2Code} value={country.name}>{country.name}</MenuItem>
     })
 
+    const addCard = () => {
+        const newCard = {
+            id: Math.random(),
+            country: selectCountry,
+            local: localInput,
+            date: date
+        }
+        const copy = [...travelsList, newCard]
+        setTravelsList(copy)
+    }
 
+    const renderCards = travelsList.map((card) => {
+        return <div key={card.id}>{card.country}, {card.local}, {card.date}</div>
+    })
 
     useEffect(() => {
-        getCountriesList()
+        getCountriesList();
     }, [])
-
 
     return (
         <div>
@@ -77,6 +89,9 @@ const SignUpForm = () => {
             type="date"
             placeholder='mês/ano'
             />
+            <br/><br/>
+            <Button variant='contained' onClick={addCard}>Adicionar</Button>
+            {renderCards}
 
         </div>
     );
