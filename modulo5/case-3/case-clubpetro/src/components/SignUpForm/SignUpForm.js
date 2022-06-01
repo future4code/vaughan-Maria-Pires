@@ -1,5 +1,6 @@
 import { Button, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { useState } from 'react';
+import ReactInputMask from 'react-input-mask';
 import useCountriesList from '../Card/hooks/useCountriesList';
 import useForm from '../Card/hooks/useForm';
 
@@ -14,7 +15,7 @@ const SignUpForm = () => {
 
     const mappedSelectCountry = !countriesList ? [] : countriesList.map((country) => {
         return <MenuItem key={country.alpha2Code} value={country.name}>
-            <img src={country.flag} width="50px" alt="Bandeiras"/>
+            <img src={country.flag} width="50px" alt="Bandeiras" />
             {country.translations.br}
         </MenuItem>
     })
@@ -67,18 +68,17 @@ const SignUpForm = () => {
             <InputLabel variant="standard" htmlFor="uncontrolled-native">
                 Meta
             </InputLabel>
-            <TextField
+            <ReactInputMask
+                mask="99/9999"
                 value={form['date']}
                 onChange={handleInput}
                 name={'date'}
-                type="date"
-                placeholder='mês/ano'
+                placeholder='Mês/ano'
+                required
             />
-            <br /><br />
+            <br/><br/>
             <Button variant='contained' onClick={addCard}>Adicionar</Button>
             {renderCards}
-        
-
 
         </div>
     );
