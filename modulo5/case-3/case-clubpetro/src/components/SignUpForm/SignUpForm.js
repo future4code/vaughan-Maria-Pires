@@ -14,11 +14,10 @@ const SignUpForm = () => {
 
     const mappedSelectCountry = !countriesList ? [] : countriesList.map((country) => {
         return <MenuItem key={country.alpha2Code} value={country.name}>
-            <img src={country.flag} width="50px" />
-            {country.name}
+            <img src={country.flag} width="50px" alt="Bandeiras"/>
+            {country.translations.br}
         </MenuItem>
     })
-
 
     const addCard = () => {
         const newCard = {
@@ -31,9 +30,12 @@ const SignUpForm = () => {
         setDesiredTravelsList(copy)
     }
 
+
     const renderCards = desiredTravelsList.map((card) => {
         return <div key={card.id}>{card.country}, {card.local}, {card.date}</div>
     })
+
+    console.log(renderCards)
 
     return (
         <div>
@@ -75,6 +77,8 @@ const SignUpForm = () => {
             <br /><br />
             <Button variant='contained' onClick={addCard}>Adicionar</Button>
             {renderCards}
+        
+
 
         </div>
     );
