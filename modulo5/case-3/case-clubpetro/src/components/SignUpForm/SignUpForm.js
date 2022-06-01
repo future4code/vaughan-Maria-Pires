@@ -1,27 +1,16 @@
 import { Button, InputLabel, MenuItem, Select, TextField } from '@mui/material';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import useCountriesList from '../Card/hooks/useCountriesList';
 import useForm from '../Card/hooks/useForm';
 
 const SignUpForm = () => {
-    const [countriesList, setCountriesList] = useState([])
-    const [desiredTravelsList, setDesiredTravelsList] = useState([])
     const [form, handleInput] = useForm({
         selectCountry: "",
         localInput: "",
         date: ""
     })
-
-    const getCountriesList = () => {
-        axios.get("https://restcountries.com/v2/all")
-            .then((res) => {
-                setCountriesList(res.data)
-                console.log(res.data)
-            })
-            .catch((err) => {
-                alert(err.message)
-            })
-    }
+    const [desiredTravelsList, setDesiredTravelsList] = useState([])
+    const countriesList = useCountriesList()
 
     const mappedSelectCountry = !countriesList ? [] : countriesList.map((country) => {
         return <MenuItem key={country.alpha2Code} value={country.name}>
@@ -45,11 +34,6 @@ const SignUpForm = () => {
     const renderCards = desiredTravelsList.map((card) => {
         return <div key={card.id}>{card.country}, {card.local}, {card.date}</div>
     })
-
-
-    useEffect(() => {
-        getCountriesList();
-    }, [])
 
     return (
         <div>
