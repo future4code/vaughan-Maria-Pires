@@ -1,13 +1,16 @@
 import { Button, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import useForm from '../Card/hooks/useForm';
 
 const SignUpForm = () => {
     const [countriesList, setCountriesList] = useState([])
-    const [selectCountry, setSelectCountry] = useState("")
-    const [localInput, setLocalInput] = useState("")
-    const [date, setDate] = useState("")
-    const [travelsList, setTravelsList] = useState([])
+    const [desiredTravelsList, setDesiredTravelsList] = useState([])
+    const [form, handleInput] = useForm({
+        selectCountry: "",
+        localInput: "",
+        date: ""
+    })
 
     const getCountriesList = () => {
         axios.get("https://restcountries.com/v2/all")
@@ -20,36 +23,29 @@ const SignUpForm = () => {
             })
     }
 
-    const handleSelectedCountry = (e) => {
-        setSelectCountry(e.target.value);
-    }
-
-    const handleInputLocal = (e) => {
-        setLocalInput(e.target.value);
-    }
-
-    const handleDate = (e) => {
-        setDate(e.target.value);
-    }
-
-    const mappedCountries = !countriesList ? [] : countriesList.map((country) => {
-        return <MenuItem key={country.alpha2Code} value={country.name}>{country.name}</MenuItem>
+    const mappedSelectCountry = !countriesList ? [] : countriesList.map((country) => {
+        return <MenuItem key={country.alpha2Code} value={country.name}>
+            <img src={country.flag} width="50px" />
+            {country.name}
+        </MenuItem>
     })
+
 
     const addCard = () => {
         const newCard = {
             id: Math.random(),
-            country: selectCountry,
-            local: localInput,
-            date: date
+            country: form['selectCountry'],
+            local: form['localInput'],
+            date: form['date']
         }
-        const copy = [...travelsList, newCard]
-        setTravelsList(copy)
+        const copy = [...desiredTravelsList, newCard]
+        setDesiredTravelsList(copy)
     }
 
-    const renderCards = travelsList.map((card) => {
+    const renderCards = desiredTravelsList.map((card) => {
         return <div key={card.id}>{card.country}, {card.local}, {card.date}</div>
     })
+
 
     useEffect(() => {
         getCountriesList();
@@ -61,21 +57,23 @@ const SignUpForm = () => {
                 País
             </InputLabel>
             <Select
-                value={selectCountry}
-                onChange={handleSelectedCountry}
+                value={form['selectCountry']}
+                onChange={handleInput}
+                name={'selectCountry'}
                 required
                 variant="outlined"
                 displayEmpty>
                 <MenuItem value="">Selecione...</MenuItem>
-                {mappedCountries}
+                {mappedSelectCountry}
             </Select>
 
             <InputLabel variant="standard" htmlFor="uncontrolled-native">
                 Local
             </InputLabel>
             <TextField
-                value={localInput}
-                onChange={handleInputLocal}
+                value={form['localInput']}
+                onChange={handleInput}
+                name={'localInput'}
                 required
                 placeholder='Digite a cidade que deseja conhecer'
             />
@@ -83,19 +81,19 @@ const SignUpForm = () => {
             <InputLabel variant="standard" htmlFor="uncontrolled-native">
                 Meta
             </InputLabel>
-            <TextField 
-            value={date} 
-            onChange={handleDate}
-            type="date"
-            placeholder='mês/ano'
+            <TextField
+                value={form['date']}
+                onChange={handleInput}
+                name={'date'}
+                type="date"
+                placeholder='mês/ano'
             />
-            <br/><br/>
+            <br /><br />
             <Button variant='contained' onClick={addCard}>Adicionar</Button>
             {renderCards}
 
         </div>
     );
 }
-
 
 export default SignUpForm;
