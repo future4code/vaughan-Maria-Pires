@@ -31,9 +31,21 @@ const SignUpForm = () => {
         setDesiredTravelsList(copy)
     }
 
+    const removeCard = (idToDelete) => {
+        const copiedList = [...desiredTravelsList]
+        const deleteTravel = copiedList.filter((travel) => {
+            return idToDelete !== travel.id;
+        })
+        setDesiredTravelsList(deleteTravel)
+    }
+
+    
 
     const renderCards = desiredTravelsList.map((card) => {
-        return <div key={card.id}>{card.country}, {card.local}, {card.date}</div>
+        return <div key={card.id}>
+            {card.country}, {card.local}, {card.date}
+            <button onClick={() => removeCard(card.id)}>Excluir</button>
+            </div>
     })
 
     console.log(renderCards)
@@ -79,6 +91,7 @@ const SignUpForm = () => {
             <br/><br/>
             <Button variant='contained' onClick={addCard}>Adicionar</Button>
             {renderCards}
+
 
         </div>
     );
