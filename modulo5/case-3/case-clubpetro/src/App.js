@@ -1,13 +1,14 @@
-import './App.css';
-import SignUpForm from './components/SignUpForm/SignUpForm';
+import Form from "./components/Form/Form";
+import "./App.css";
+
+
 
 const App = () => {
+ 
   return (
-    <div>
-      <h1>viagens</h1>
-      <SignUpForm/>
-    </div>
-  );
-}
+    <>
+    <Form/>
+  </>
+  )};
 
-export default App;
+  export default App;

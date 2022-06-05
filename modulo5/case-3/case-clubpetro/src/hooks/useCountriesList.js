@@ -8,7 +8,6 @@ const useCountriesList = () => {
         axios.get("https://restcountries.com/v2/all")
         .then((res) => {
             setCountriesList(res.data)
-            console.log(res.data)
         })
         .catch((err) => {
             alert(err.message)
