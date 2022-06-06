@@ -20,6 +20,7 @@ const Form = () => {
             {country.translations.br}
         </option>
     })
+
     const addCard = () => {
         const newCard = {
             id: Math.random(),
@@ -44,6 +45,7 @@ const Form = () => {
         return <Card key={card.alpha2Code} card={card} removeCard={removeCard} />
     })
 
+
     return (
         <>
             <Header />
@@ -64,6 +66,7 @@ const Form = () => {
                     name={'localInput'}
                     required
                     placeholder='Digite a cidade que deseja conhecer'
+                    
                 />
                 <InputDate value={form['date']} onChange={handleInput} name={'date'}
                     mask="99/9999" placeholder="mês/ano" />

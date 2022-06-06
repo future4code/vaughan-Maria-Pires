@@ -5,7 +5,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 @media(max-width: 600px){
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 38px;
+    margin-left: 28px;
 }
 
 `
