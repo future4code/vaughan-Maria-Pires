@@ -1,8 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
+import Router from "./router/Router";
 
 
 const App = () => {
   return (
-    <h1>Case SICREDI</h1>
+    <BrowserRouter>
+    <Router/>
+    </BrowserRouter>
   );
 }
 
