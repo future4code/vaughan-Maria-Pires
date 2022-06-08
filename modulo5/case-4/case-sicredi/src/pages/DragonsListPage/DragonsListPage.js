@@ -27,7 +27,7 @@ const DragonsListPage = () => {
         return a.name.localeCompare(b.name)
     })
     .map((dragon) => {
-        return <DragonCard key={dragon.id} name={dragon.name}/>
+        return <DragonCard key={dragon.id} name={dragon.name} id={dragon.id}/>
     })
 
 
