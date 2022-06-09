@@ -1,6 +1,8 @@
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Dragon, EmailInput, LoginButton, PasswordInput, ScreenContainer, SignUpButton } from "./styled";
+import dragaoVermelho from "../../img/dragaoVermelho.png"
 
 
 
@@ -36,29 +38,30 @@ const SignUpPage = () => {
 
 
     return (
-        <>
-            Sign up page
-            <br /><br />
-            <input
+        <ScreenContainer>
+            <h1>Cadastro</h1>
+            <EmailInput
                 type="email"
                 placeholder="E-mail"
                 value={email}
                 onChange={(e) => [setEmail(e.target.value), setError("")]}
             />
-            <input
+            <EmailInput
                 type="email"
                 placeholder="Confirme o e-mail"
                 value={confEmail}
                 onChange={(e) => [setConfEmail(e.target.value), setError("")]}
             />
-            <input
+            <PasswordInput
                 type="password"
                 placeholder="Senha"
                 value={password}
                 onChange={(e) => [setPassword(e.target.value), setError("")]}
             />
-            <button onClick={handleSignUp}>Efetuar cadastro</button>
-        </>
+            <SignUpButton onClick={handleSignUp}>Efetuar cadastro</SignUpButton>
+            <LoginButton onClick={() => navigate(-1)}>Já possui conta? Entre aqui</LoginButton>
+            <Dragon src={dragaoVermelho}/>
+        </ScreenContainer>
     )
 }
 
