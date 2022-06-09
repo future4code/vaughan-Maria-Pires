@@ -17,3 +17,7 @@ export const goToLoginPage = (navigate) => {
 export const goToDragonsListPage = (navigate) => {
     navigate("/")
 }
+
+export const goToEditPage = (navigate, id) => {
+    navigate(`/editar-dragao/${id}`)
+}

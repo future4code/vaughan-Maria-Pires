@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage"
 import LoginPage from "../pages/LoginPage/LoginPage"
 import SignUpDragonPage from "../pages/SignUpDragonPage/SignUpDragonPage"
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
+import EditPage from "../pages/EditPage/EditPage";
 import useAuth from "../hooks/useAuth"
 
 const Router = () => {
@@ -19,6 +20,7 @@ const Router = () => {
             <Route path="/"  element={<Private Item={DragonsListPage}/>}/>
             <Route path="/detalhe/:id" element={<Private Item={DetailsPage}/>}/>
             <Route path="/cadastro-dragao" element={<Private Item={SignUpDragonPage}/>}/>
+            <Route path="/editar-dragao/:id" element={<Private Item={EditPage}/>}/>
             <Route path="*" element={<ErrorPage/>}/>
 
         </Routes>
