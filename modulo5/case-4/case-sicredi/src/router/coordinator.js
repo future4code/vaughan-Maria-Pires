@@ -6,6 +6,10 @@ export const goToSignUpPage = (navigate) => {
     navigate("/cadastro")
 }
 
+export const goToSignUpDragonPage = (navigate) => {
+    navigate("/cadastro-dragao")
+}
+
 export const goToLoginPage = (navigate) => {
     navigate("login")
 }

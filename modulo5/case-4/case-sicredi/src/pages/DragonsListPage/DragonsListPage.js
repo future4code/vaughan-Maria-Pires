@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import DragonCard from "../../components/DragonCard/DragonCard";
 import { BASE_URL } from "../../constants/urls";
+import { goToSignUpDragonPage } from "../../router/coordinator";
 import { ScreenContainer } from "./styled";
 
 const DragonsListPage = () => {
+    const navigate = useNavigate()
     const [dragonsList, setDragonsList] = useState([])
 
     const getAllDragons = () => {
@@ -34,6 +37,7 @@ const DragonsListPage = () => {
     return (
         <ScreenContainer>
             {renderDragonsList}
+            <div><button onClick={() => goToSignUpDragonPage(navigate)}>Adicionar novo dragão à lista</button></div>
         </ScreenContainer>
     )
 }
