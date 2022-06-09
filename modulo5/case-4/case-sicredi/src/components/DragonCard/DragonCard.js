@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import dragao from "../../img/dragao.png"
 import { goToDetailsPage, goToEditPage } from "../../router/coordinator";
-import { Card } from "./styled";
+import { Buttons, Card, DivButtons, EditButton } from "./styled";
 
 
 const DragonCard = (props) => {
@@ -22,11 +22,14 @@ const DragonCard = (props) => {
 
     return (
         <Card>
-            {props.name}
+            <h4>{props.name}</h4>
             <img width="80px" alt="ilustração de um dragão" src={dragao} />
-            <button onClick={() => goToDetailsPage(navigate, props.id)}>Ver detalhes</button>
-            <button onClick={() => deleteDragon(props.id)}>X</button>
-            <button onClick={() => goToEditPage(navigate, props.id)}>Editar</button>
+            <br/>
+            <DivButtons>
+                <Buttons onClick={() => goToDetailsPage(navigate, props.id)}>Detalhes</Buttons>
+                <Buttons onClick={() => deleteDragon(props.id)}>X</Buttons>
+            </DivButtons>
+            <EditButton onClick={() => goToEditPage(navigate, props.id)}>Editar</EditButton>
         </Card>
     )
 }
