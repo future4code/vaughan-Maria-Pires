@@ -14,13 +14,12 @@ const DragonsListPage = () => {
         axios.get(`${BASE_URL}`)
             .then((res) => {
                 setDragonsList(res.data)
-                console.log(res.data)
             })
             .catch((err) => {
                 alert(err.message)
             })
     }
-    
+
     useEffect(() => {
         getAllDragons()
     })
@@ -30,7 +29,7 @@ const DragonsListPage = () => {
         return a.name.localeCompare(b.name)
     })
     .map((dragon) => {
-        return <DragonCard key={dragon.id} name={dragon.name} id={dragon.id}/>
+        return <DragonCard key={Math.random()} name={dragon.name} id={dragon.id}/>
     })
 
 
