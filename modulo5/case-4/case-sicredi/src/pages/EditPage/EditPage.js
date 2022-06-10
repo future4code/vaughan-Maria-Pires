@@ -21,7 +21,7 @@ const EditPage = () => {
             alert("Dragão atualizado com sucesso!")
         })
         .catch((err) => {
-            console.log(err.response)
+            alert(err.response)
         })
     }
 
