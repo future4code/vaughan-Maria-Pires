@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
+import { goToDragonsListPage } from "../../router/coordinator";
 import { Button, ButtonsDiv, NameInput, ScreenContainer, TypeInput } from "./styled";
 
 
@@ -43,8 +44,7 @@ const SignUpDragonPage = () => {
         onChange={(e) => [setType(e.target.value)]}
         />
         <ButtonsDiv>
-        <Button onClick={createNewDragon}>Adicionar dragão</Button>
-        <Button onClick={() => navigate(-1)}>Voltar para a lista</Button>
+        <Button onClick={() => [createNewDragon(), goToDragonsListPage(navigate)]}>Adicionar dragão</Button>
         </ButtonsDiv>
         </ScreenContainer>
     )

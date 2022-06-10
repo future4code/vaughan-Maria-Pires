@@ -28,7 +28,6 @@ border-style: none;
 
 export const ButtonsDiv = styled.div`
 display:flex;
-justify-content: space-around;
 @media(max-width: 600px){
     display: grid;
 }

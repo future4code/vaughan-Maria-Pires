@@ -3,6 +3,7 @@ import { BASE_URL } from "../../constants/urls"
 import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Button, ButtonsDiv, NameInput, ScreenContainer, TypeInput } from "./styled"
+import { goToDragonsListPage } from "../../router/coordinator"
 
 
 const EditPage = () => {
@@ -16,7 +17,7 @@ const EditPage = () => {
             "name": name,
             "type": type
         }
-        axios.post(`${BASE_URL}/${params.id}`, body)
+        axios.put(`${BASE_URL}/${params.id}`, body)
         .then(() => {
             alert("Dragão atualizado com sucesso!")
         })
@@ -41,8 +42,7 @@ const EditPage = () => {
         onChange={(e) => [setType(e.target.value)]}
         />
         <ButtonsDiv>
-        <Button onClick={() => editDragon(params.id)}>Atualizar dragão</Button>
-        <Button onClick={() => navigate(-1)}>Voltar para a lista</Button>
+        <Button onClick={() => [editDragon(params.id), goToDragonsListPage(navigate)]}>Atualizar dragão</Button>
         </ButtonsDiv>
         </ScreenContainer>
     )
