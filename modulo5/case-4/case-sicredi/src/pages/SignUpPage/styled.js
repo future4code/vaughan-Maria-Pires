@@ -8,6 +8,9 @@ height: 100vh;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media(max-width: 600px){
+    overflow: -moz-hidden-unscrollable;
+}
 `
 
 export const EmailInput = styled.input`
@@ -38,12 +41,12 @@ margin: 20px;
 
 export const LoginButton = styled.button`
 background-color: #3366ff;
-width: 200px;
+width: 240px;
 height: 30px;
 cursor: pointer;
 border-style: none;
 border-radius: 10px;
-margin: 40px;
+margin: 20px;
 `
 
 export const Dragon = styled.img`
