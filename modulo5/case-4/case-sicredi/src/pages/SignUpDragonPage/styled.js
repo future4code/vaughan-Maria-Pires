@@ -26,6 +26,11 @@ border-radius: 10px;
 border-style: none;
 `
 
+export const ButtonsDiv = styled.div`
+display:flex;
+justify-content: space-around;
+`
+
 export const Button = styled.button`
 background-color: #3366ff;
 width: 200px;

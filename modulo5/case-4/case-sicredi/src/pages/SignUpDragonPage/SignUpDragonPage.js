@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
-import { Button, NameInput, ScreenContainer, TypeInput } from "./styled";
+import { Button, ButtonsDiv, NameInput, ScreenContainer, TypeInput } from "./styled";
 
 
 const SignUpDragonPage = () => {
+    const navigate = useNavigate()
     const [name, setName] = useState("")
     const [type, setType] = useState("")
 
@@ -17,6 +19,8 @@ const SignUpDragonPage = () => {
         axios.post(`${BASE_URL}`, body)
         .then((res) => {
             alert(`${name} cadastrado com sucesso!`)
+            setName("")
+            setType("")
         })
         .catch((err) => {
             console.log(err.message)
@@ -38,7 +42,10 @@ const SignUpDragonPage = () => {
         value={type}
         onChange={(e) => [setType(e.target.value)]}
         />
+        <ButtonsDiv>
         <Button onClick={createNewDragon}>Adicionar dragão</Button>
+        <Button onClick={() => navigate(-1)}>Voltar para a lista</Button>
+        </ButtonsDiv>
         </ScreenContainer>
     )
 }
