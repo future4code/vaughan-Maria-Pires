@@ -1,10 +1,12 @@
 import axios from "axios"
 import { BASE_URL } from "../../constants/urls"
 import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { Button, ButtonsDiv, NameInput, ScreenContainer, TypeInput } from "./styled"
 
 
 const EditPage = () => {
+    const navigate = useNavigate()
     const params = useParams()
     const [name, setName] = useState("")
     const [type, setType] = useState("")
@@ -24,22 +26,25 @@ const EditPage = () => {
     }
 
     return(
-        <>
-        Atualizar dragão
-        <input 
+        <ScreenContainer>
+        <h2>Atualizar dragão</h2>
+        <NameInput 
         type="text"
         placeholder="Nome"
         value={name}
         onChange={(e) => [setName(e.target.value)]}
         />
-        <input
+        <TypeInput
         type="text"
         placeholder="Tipo"
         value={type}
         onChange={(e) => [setType(e.target.value)]}
         />
-        <button onClick={() => editDragon(params.id)}>Atualizar dragão</button>
-        </>
+        <ButtonsDiv>
+        <Button onClick={() => editDragon(params.id)}>Atualizar dragão</Button>
+        <Button onClick={() => navigate(-1)}>Voltar para a lista</Button>
+        </ButtonsDiv>
+        </ScreenContainer>
     )
 }
 

@@ -8,6 +8,9 @@ height: 100vh;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media(max-width: 600px){
+    overflow: -moz-hidden-unscrollable;
+}
 `
 
 export const EmailInput = styled.input`
