@@ -23,4 +23,5 @@ background-color: black;
 color: white;
 border-style: none;
 margin: 20px;
+cursor: pointer;
 `

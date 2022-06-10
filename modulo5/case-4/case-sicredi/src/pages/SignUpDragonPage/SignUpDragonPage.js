@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { BASE_URL } from "../../constants/urls";
+import { Button, NameInput, ScreenContainer, TypeInput } from "./styled";
 
 
 const SignUpDragonPage = () => {
@@ -23,22 +24,22 @@ const SignUpDragonPage = () => {
     }
     
     return(
-        <>
-        Página para cadastrar novo dragão
-        <input 
+        <ScreenContainer>
+        <h2>Cadastrar novo dragão</h2>
+        <NameInput
         type="text"
         placeholder="Nome"
         value={name}
         onChange={(e) => [setName(e.target.value)]}
         />
-        <input
+        <TypeInput
         type="text"
         placeholder="Tipo"
         value={type}
         onChange={(e) => [setType(e.target.value)]}
         />
-        <button onClick={createNewDragon}>Adicionar dragão</button>
-        </>
+        <Button onClick={createNewDragon}>Adicionar dragão</Button>
+        </ScreenContainer>
     )
 }
 
